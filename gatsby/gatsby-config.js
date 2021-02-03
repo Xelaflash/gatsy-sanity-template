@@ -1,13 +1,22 @@
-module.exports = {
+import dotenv from 'dotenv';
+
+dotenv.config({ path: '.env' });
+
+export default {
   siteMetadata: {
     title: 'passion-doner',
+    // TODO: change for real URL
+    siteUrl: `https://www.rien.com`,
+    description: `The best pizzas in town`,
   },
   plugins: [
     {
       resolve: 'gatsby-source-sanity',
       options: {
-        projectId: '',
-        dataset: '',
+        projectId: 'xiym7sj3',
+        dataset: 'production',
+        watchMode: true,
+        token: process.env.SANITY_TOKEN,
       },
     },
     'gatsby-plugin-styled-components',
@@ -16,22 +25,15 @@ module.exports = {
     'gatsby-plugin-sitemap',
     'gatsby-plugin-offline',
     'gatsby-transformer-sharp',
+    'gatsby-plugin-sass',
+    'gatsby-plugin-postcss',
     {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'images',
-        path: './src/images/',
+        path: `${__dirname}/src/assets/`,
       },
       __key: 'images',
-    },
-    {
-      resolve: `gatsby-plugin-sass`,
-      options: {
-        postCssPlugins: [
-          require('tailwindcss'),
-          require('./tailwind.config.js'), // Optional: Load custom Tailwind CSS configuration
-        ],
-      },
     },
   ],
 };

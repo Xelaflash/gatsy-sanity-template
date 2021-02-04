@@ -1,10 +1,8 @@
-# Passion Döner
+# Gatsby / Sanity template
 
-Website to review and rate Döner Kebab all over the world
+Template made for Gatsby website with Sanity CMS
 (Feb 2021)
 
 ## Stack
 Front-End: Gatsby / Tailwind / Sass
 Back-End: Sanity CMS / GraphQl
-
-URL: [Passion Döner](TBD)

@@ -4,16 +4,16 @@ dotenv.config({ path: '.env' });
 
 export default {
   siteMetadata: {
-    title: 'passion-doner',
+    title: '',
     // TODO: change for real URL
-    siteUrl: `https://www.rien.com`,
-    description: `The best pizzas in town`,
+    siteUrl: ``,
+    description: ``,
   },
   plugins: [
     {
       resolve: 'gatsby-source-sanity',
       options: {
-        projectId: 'xiym7sj3',
+        projectId: '',
         dataset: 'production',
         watchMode: true,
         token: process.env.SANITY_TOKEN,
